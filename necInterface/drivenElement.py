@@ -1,21 +1,21 @@
 from element import *
 
-class DrivenMoxonElement(MoxonElement):
-	def __init__(self, bendLength, straightLength, foldDirection, position, radius=0.025):
-		MoxonElement.__init__(self,bendLength,straightLength, foldDirection, position, radius)
+class DrivenElement(Element):
+	def __init__(self, length, position, radius=0.025):
+		Element.__init__(self, length, position, radius)
 
 	def addNecGeometry(self, g):
-		MoxonElement.addNecGeometry(self, g);
+		Element.addNecGeometry(self, g);
 		drivenTag = g.tag-1;
 		g.excite(drivenTag)
 		return g
 
 
 def makeDriven(e):
-	return DrivenMoxonElement(e.bendLength, e.straightLength, e.foldDirection,
+	return DrivenElement(e.bendLength, e.straightLength, e.foldDirection,
 				e.position)
 
 def makePassive(e):
-	return MoxonElement(e.bendLength, e.straightLength, e.foldDirection,
+	return Element(e.bendLength, e.straightLength, e.foldDirection,
 				e.position)
 		

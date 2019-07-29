@@ -46,10 +46,10 @@ for l,p in zip(lengths, positions):
     print "Element", n,
     if n == 1:
         print "Driven"
-        ant.addElement(DrivenMoxonElement(0, l/1000.0 , 'north', p/1000.0, 0.005))
+        ant.addElement(DrivenElement( l/1000.0 , p/1000.0, 0.005))
     else:
         print "Passive"
-        ant.addElement(MoxonElement(0, l/1000.0 , 'north', p/1000.0, 0.005))
+        ant.addElement(Element(l/1000.0 ,  p/1000.0, 0.005))
     n+=1
 #ant.addElement(element1)
 #ant.addElement(element2)
